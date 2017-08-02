@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Now Playing</title>
+</head>
+<body>
+<h1>The movies currently playing:</h1>
+
+<p>th:each="movie:${movies}"</p>
+<div>
+    <img width="150px" src="'http://image.tmdb.org/t/p/original' + ???"/>
+    <p>th:text ="${movie.title}"</p>
+    <p>Popularity:<span th:text="${movie.popularity}"></span></p>
+    <span>Overview:<span th:text="${movie.overview}"></span></span></p>
+    <span ???></span>
+</div>
+</body>
+</html>
