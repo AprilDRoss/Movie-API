@@ -4,17 +4,20 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
+<nav>
+    <a href="/">Home</a>
+    <a href="/now-playing">Now Playing</a>
+    <a href="/medium-popular-long-name">Medium Popular Long Name</a>
+</nav>
 <body>
 <h1>Here are all the movies that are popular (b/t 30 and 80) and long titles</h1>
 
     <p th:each="movie : ${movies}"/>
-        <div>
-            <img th:src="${movie.poster_path}" alt=""/>
-            <p th:text="${movie.title}"></p>
-            <p>Popularity: <span th:text="${movie.popularity}"></span></p>
-            <p>Overview:<span th:text="${movie.overview}"></span></p>
-        </div>
-    </p>
-
+<div th:each="movie:${movies}" >
+    <img width="150px" th:src="'http://image.tmdb.org/t/p/original' + ${movie.poster_path}"/>
+    <p th:text ="${movie.title}"></p>
+    <p>Popularity:<span th:text="${movie.popularity}"></span></p>
+    <p>Overview:<span th:text="${movie.overview}"></span></p>
+</div>
 </body>
 </html>

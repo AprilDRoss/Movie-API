@@ -5,15 +5,20 @@
     <title>Now Playing</title>
 </head>
 <body>
+<nav>
+    <a href="/">Home</a>
+    <a href="/now-playing">Now Playing</a>
+    <a href="/medium-popular-long-name">Medium Popular Long Name</a>
+</nav>
 <h1>The movies currently playing:</h1>
 
-<p>th:each="movie:${movies}"</p>
-<div>
-    <img width="150px" src="'http://image.tmdb.org/t/p/original' + ???"/>
-    <p>th:text ="${movie.title}"</p>
+
+<div th:each="movie:${movies}" >
+    <img width="150px" th:src="'http://image.tmdb.org/t/p/original' + ${movie.poster_path}"/>
+    <p th:text ="${movie.title}"></p>
     <p>Popularity:<span th:text="${movie.popularity}"></span></p>
-    <span>Overview:<span th:text="${movie.overview}"></span></span></p>
-    <span ???></span>
+    <p>Overview:<span th:text="${movie.overview}"></span></p>
 </div>
 </body>
 </html>
+
